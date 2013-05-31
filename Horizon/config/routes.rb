@@ -1,8 +1,5 @@
 Horizon::Application.routes.draw do
-
-  resources :homepages
-
-
+	
   root to: 'welcome#index'
 
   get 'log_out' => 'sessions#destroy', as: 'log_out'
@@ -11,4 +8,5 @@ Horizon::Application.routes.draw do
   resources :welcome, only: :index
   resources :users
   resources :sessions, only: [:create, :destroy]
+  resources :homepages
 end

@@ -57,11 +57,10 @@
           </button>
           <a class="brand" href="#">Horizon</a>
           <div class="nav-collapse collapse">
-           
 
           	<% if current_user %>
-              <p class="navbar-text pull-right">
-                Hi, <%= link_to current_user.username, user_path(current_user) %>!
+              <p class="navbar-text pull-right" style="color: orange">
+                Hi, <%= link_to current_user.username, user_path(current_user), style: 'color: orange;' %>! | <%= link_to 'Log out', log_out_path %>
               </p>
           	<% else %>
           		<%= form_tag sessions_path, class: 'navbar-form pull-right' do %>

@@ -8,8 +8,8 @@ class SessionsController < ApplicationController
 
   	user = User.find(:first, conditions: [ 'lower(username) = ?', params[:username].downcase ])
 
-		if (user && user.authenticate(params[:password])
-			session[:user_id] = user.user_id)
+		if user && user.authenticate(params[:password])
+			session[:user_id] = user.id
 			redirect_to :back
 		else
 			redirect_to :back, alert: 'Invalid username or password'
