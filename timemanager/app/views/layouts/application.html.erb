@@ -14,9 +14,12 @@
 
       <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit">
-       	
+      
+      <% unless flash[:notice].nil? %>
+        <%= flash[:notice] %>
+      <% end %>
       <%= yield %>
-
+      <%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>
       </div>
 
       
